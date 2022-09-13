@@ -1,0 +1,8 @@
+fr:
+  title: Digibloom
+  weight: 1
+  contentDir: content/fr
+en:
+  title: Digibloom
+  weight: 2
+  contentDir: content/en

@@ -1,0 +1,7 @@
+title: Digibloom
+baseURL: https://www.digibloom.net
+
+theme: digibloom
+
+defaultContentLanguage: fr
+enableRobotsTXT: true
