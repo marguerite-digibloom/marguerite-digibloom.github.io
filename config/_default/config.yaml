@@ -5,3 +5,8 @@ theme: digibloom
 
 defaultContentLanguage: fr
 enableRobotsTXT: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

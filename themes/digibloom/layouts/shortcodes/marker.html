@@ -1,0 +1,14 @@
+{{ $marker := resources.Get "images/marker.svg" }}
+{{ $color := .Get "color" | default "#FFF5B6" }}
+{{ $size := .Get "size" | default "70" }}
+
+{{ $svg_context := (dict
+"class" "absolute top-0 -z-10 h-full"
+"style" (safeCSS (printf "width: %s%%; left: calc((100%% - %s%%) / 2);" $size $size))
+"color" (printf "%s" $color)
+) }}
+
+<div class="relative inline-flex">
+  {{ .Inner | markdownify }}
+  {{ partial "svg/marker.svg" $svg_context }}
+</div>

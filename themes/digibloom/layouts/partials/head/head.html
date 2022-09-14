@@ -1,0 +1,15 @@
+<head>
+  {{- partial "head/meta.html" . -}}
+
+  {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+  <title>
+    {{ block "title" . }}
+    {{ with .Params.Title }}{{ . }} | {{ end }}
+    {{ .Site.Params.Title | default .Site.Title }}
+    {{ end }}
+  </title>
+
+  {{- partial "head/rss.html" . -}}
+  {{- partial "head/social.html" . -}}
+  {{- partial "head/style.html" . -}}
+</head>

@@ -1,8 +1,10 @@
 fr:
-  title: Digibloom
+  languageName: Français
   weight: 1
   contentDir: content/fr
-en:
   title: Digibloom
+en:
+  languageName: English
   weight: 2
   contentDir: content/en
+  title: Digibloom
