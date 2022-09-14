@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header class="p-4 pt-0">
   <div class="flex justify-center items-center">
     <div class="flex flex-col justify-center items-center">
       <a class="flex flex-col justify-center items-center" href="{{ .Site.BaseURL | relLangURL }}">
@@ -6,7 +6,12 @@
         <img src="{{ $logo.Permalink }}" class="w-64" />
         <h1 class="font-semibold text-4xl uppercase">{{ .Site.Params.Title }}</h1>
       </a>
-      <h2 class="text-xl">{{ .Site.Params.Headline }}</h2>
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center sm:py-2 divide-current divide-y-2 sm:divide-x-2 sm:divide-y-0">
+        {{ range .Site.Params.Headlines }}
+        <h2 class="text-xl whitespace-nowrap py-2 sm:px-2 sm:py-0">{{ . }}</h2>
+        {{ end }}
+      </div>
     </div>
   </div>
 </header>
