@@ -4,8 +4,8 @@
   {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
   <title>
     {{ block "title" . }}
-    {{ with .Params.Title }}{{ . }} | {{ end }}
-    {{ .Site.Params.Title | default .Site.Title }}
+      {{ with .Params.Title }}{{ . }} |{{ end }}
+      {{ .Site.Params.Title | default .Site.Title }}
     {{ end }}
   </title>
 

@@ -1,15 +1,24 @@
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,minimum-scale=1" />
 
 {{ hugo.Generator }}
 
 {{ $public := and (not .Site.Params.private) (not .Params.private) }}
 {{ if $public }}
-<meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow" />
 {{ else }}
-<meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow" />
 {{ end }}
 
-<meta name="description"
-  content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.Description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+{{ with .Description }}
+  <meta name="description" content="{{ . }}" />
+{{ else }}
+  {{ if .IsPage }}
+    <meta name="description" content="{{ .Summary }}" />
+  {{ else }}
+    {{ with .Site.Params.Description }}
+      <meta name="description" content="{{ . }}" />
+    {{ end }}
+  {{ end }}
+{{ end }}
