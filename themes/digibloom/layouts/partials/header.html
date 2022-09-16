@@ -2,7 +2,7 @@
   <div class="flex items-center justify-center">
     <div class="flex flex-col items-center justify-center">
       <a class="flex flex-col items-center justify-center" href="{{ .Site.BaseURL | relLangURL }}">
-        {{ $logo := resources.Get "images/logo-background-green.svg" }}
+        {{ $logo := resources.Get "images/logo-background-green.svg" | fingerprint }}
         <img src="{{ $logo.Permalink }}" class="w-64" alt="{{ .Site.Params.Title }}" />
         <h1 class="text-4xl font-semibold uppercase">{{ .Site.Params.Title }}</h1>
       </a>
