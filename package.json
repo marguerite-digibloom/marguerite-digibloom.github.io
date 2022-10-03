@@ -2,14 +2,15 @@
   "name": "digibloom",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run build -- --watch",
+    "start": "run-p start:tailwind start:hugo",
+    "start:tailwind": "cd ./themes/digibloom && npm run build -- --watch",
+    "start:hugo": "hugo server",
     "build": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "0.5.7",
+    "npm-run-all": "4.1.5",
     "prettier": "2.7.1",
     "prettier-plugin-go-template": "0.0.13",
-    "prettier-plugin-tailwindcss": "0.1.13",
-    "tailwindcss": "3.1.8"
+    "prettier-plugin-tailwindcss": "0.1.13"
   }
 }

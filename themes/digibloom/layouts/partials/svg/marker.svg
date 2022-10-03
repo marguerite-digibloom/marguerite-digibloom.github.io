@@ -1,3 +1,3 @@
-<svg class="{{ .class }}" style="{{ .style }}" viewBox="0 0 200 25" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M 0.68568521,15.023733 C 80.152673,9.5619444 132.73753,8.8479676 199.61079,11.454118" stroke="{{ .color }}" stroke-width="20" />
+<svg class="{{ .class }}" style="{{ .style }}" viewBox="0 0 200 25" preserveAspectRatio="none"  fill="none" stroke="white" stroke-width="20"  xmlns="http://www.w3.org/2000/svg">
+<path d="M 0.68568521,15.023733 C 80.152673,9.5619444 132.73753,8.8479676 199.61079,11.454118" />
 </svg>
