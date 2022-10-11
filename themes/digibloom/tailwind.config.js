@@ -8,8 +8,9 @@ const customColors = {
     dark: '#8BBFBC',
   },
   digijaune: {
-    DEFAULT: '#FFF5B6',
-    normal: '#FFF5B6',
+    light: '#FFF5B6',
+    DEFAULT: '#F0DE73',
+    normal: '#F0DE73',
     dark: '#E0C72F',
   },
 };
