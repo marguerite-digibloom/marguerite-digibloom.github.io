@@ -36,6 +36,9 @@ module.exports = {
             p: {
               textAlign: 'justify',
             },
+            li: {
+              textAlign: 'justify',
+            },
             figcaption: {
               textAlign: 'center',
             },

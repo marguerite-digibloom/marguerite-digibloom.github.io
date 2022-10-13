@@ -1,29 +1,31 @@
-<header class="p-6">
-  <div class="flex items-center justify-center">
-    <div class="flex flex-col items-center justify-center">
-      <a class="mb-4 flex flex-col items-center justify-center" href="{{ .Site.BaseURL | relLangURL }}">
-        {{ $logo := resources.Get "images/logo-background-green.svg" | fingerprint }}
-        <img src="{{ $logo.Permalink }}" class="w-48" alt="{{ .Site.Params.Title }}" />
-        <h1 class="text-2xl font-semibold uppercase tracking-[.2em]">{{ .Site.Params.Title }}</h1>
-      </a>
-      <div
-        class="flex flex-col items-center justify-center divide-y divide-current sm:flex-row sm:divide-x sm:divide-y-0">
-        {{ range .Site.Params.Headlines }}
-          <h2 class="whitespace-nowrap py-2 text-lg sm:px-2 sm:py-0">{{ . }}</h2>
-        {{ end }}
+<header>
+  <div class="container mx-auto max-w-screen-xl p-6">
+    <div class="flex items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
+        <a class="mb-4 flex flex-col items-center justify-center" href="{{ .Site.BaseURL | relLangURL }}">
+          {{ $logo := resources.Get "images/logo-background-green.svg" | fingerprint }}
+          <img src="{{ $logo.Permalink }}" class="w-48" alt="{{ .Site.Params.Title }}" />
+          <h1 class="text-2xl font-semibold uppercase tracking-[.2em]">{{ .Site.Params.Title }}</h1>
+        </a>
+        <div
+          class="flex flex-col items-center justify-center divide-y divide-current sm:flex-row sm:divide-x sm:divide-y-0">
+          {{ range .Site.Params.Headlines }}
+            <h2 class="whitespace-nowrap py-2 text-lg sm:px-2 sm:py-0">{{ . }}</h2>
+          {{ end }}
+        </div>
       </div>
     </div>
+
+    <hr class="mx-auto mt-4 mb-6 max-w-lg border-t-2 border-digibleu-dark sm:mt-6" />
+
+    <nav>
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-16">
+        <li class="text-2xl"><a class="underline underline-offset-8" href="/">Accueil</a></li>
+        <li class="text-2xl"><a class="underline underline-offset-8" href="/services">Services</a></li>
+        <!-- <li class="text-2xl"><a class="underline underline-offset-8" href="#">Blog</a></li> -->
+        <li class="text-2xl"><a class="underline underline-offset-8" href="/about">A propos</a></li>
+        <li class="text-2xl"><a class="underline underline-offset-8" href="#">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-
-  <hr class="mx-auto mt-4 mb-6 max-w-lg border-digibleu-dark sm:mt-6" />
-
-  <nav>
-    <ul class="flex flex-wrap justify-evenly gap-x-8 gap-y-4">
-      <li class="text-2xl"><a href="#">Accueil</a></li>
-      <li class="text-2xl"><a href="#">Services</a></li>
-      <li class="text-2xl"><a href="#">Blog</a></li>
-      <li class="text-2xl"><a href="#">A propos</a></li>
-      <li class="text-2xl"><a href="#">Contact</a></li>
-    </ul>
-  </nav>
 </header>
