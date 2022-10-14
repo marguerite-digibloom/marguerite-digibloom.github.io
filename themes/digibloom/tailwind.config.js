@@ -2,16 +2,20 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 const customColors = {
   digibleu: {
-    light: '#EDFFFE',
-    DEFAULT: '#D0F9F6',
-    normal: '#D0F9F6',
-    dark: '#8BBFBC',
+    100: '#EDFFFE',
+    200: '#DFFCFA',
+    300: '#D0F9F6',
+    400: '#BFEBE8',
+    500: '#AEDCD9',
+    600: '#8BBFBC',
   },
   digijaune: {
-    light: '#FFF5B6',
-    DEFAULT: '#F0DE73',
-    normal: '#F0DE73',
-    dark: '#E0C72F',
+    100: '#FFFBE0',
+    200: '#FFF8CB',
+    300: '#FFF5B6',
+    400: '#F8EA95',
+    500: '#F0DE73',
+    600: '#E0C72F',
   },
 };
 
