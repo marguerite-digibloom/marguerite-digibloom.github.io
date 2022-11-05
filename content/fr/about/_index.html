@@ -10,7 +10,7 @@ title: A propos
   <div class="grid auto-cols-auto grid-flow-row gap-x-12 md:grid-flow-col">
     <figure class="m-0 flex justify-center">
       <img
-        class="aspect-[16/10] object-cover object-[center_10%] md:aspect-auto"
+        class="aspect-[16/10] w-full object-cover object-[center_10%] md:aspect-auto"
         src="/images/marguerite/portrait.jpg"
         alt="Marguerite, fondatrice de Digibloom" />
     </figure>
@@ -63,7 +63,7 @@ title: A propos
     </div>
 
     <figure class="row-start-1 md:m-0">
-      <img src="/images/consciously-digital.png" alt="Consciously Digital" />
+      <img src="/images/other/consciously-digital.png" alt="Consciously Digital" />
     </figure>
   </div>
 </div>
@@ -87,7 +87,7 @@ title: A propos
   </div>
 </div>
 
-<div class="bg-digibleu-100 relative -mx-6 my-16 p-6">
+<div class="relative -mx-6 my-16 bg-digibleu-100 p-6">
   <h3 class="mt-0 text-center">{{< marker >}}Ma mission ❤️{{< /marker >}}</h3>
   <div class="container mx-auto max-w-screen-md">
     <figure class="flex items-center justify-center">
@@ -123,8 +123,8 @@ title: A propos
     <h3 class="mt-0">Ca t'intéresse ?</h3>
 
     <a
-      class="bg-digijaune-300 hover:bg-digijaune-400 inline-block w-full rounded-full border-2 border-black px-10 py-3 text-center font-semibold no-underline md:w-fit"
-      href="/services/">
+      class="inline-block w-full rounded-full border-2 border-black bg-digijaune-300 px-10 py-3 text-center font-semibold no-underline hover:bg-digijaune-400 md:w-fit"
+      href="{{ `/services/` | absLangURL }}">
       Découvrir les offres
     </a>
   </div>
@@ -133,7 +133,7 @@ title: A propos
 <div class="my-16">
   <h3 class="mt-0">{{< marker >}}Mes diplômes 🎓{{< /marker >}}</h3>
 
-  <ul class="border-digibleu-600 border-4 p-6">
+  <ul class="border-4 border-digibleu-600 p-6">
     <li>
       Formation en bien-être numérique
       <a

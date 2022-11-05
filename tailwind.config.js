@@ -22,11 +22,11 @@ const customColors = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    '../../content/**/*.md',
-    '../../content/**/*.html',
-    '../../layouts/**/*.html',
     'content/**/*.md',
+    'content/**/*.html',
     'layouts/**/*.html',
+    'themes/digibloom/content/**/*.md',
+    'themes/digibloom/layouts/**/*.html',
   ],
   theme: {
     extend: {

@@ -40,7 +40,7 @@
   </div>
 </div>
 
-<div class="bg-digibleu-100 relative -mx-6 my-16 p-6">
+<div class="relative -mx-6 my-16 bg-digibleu-100 p-6">
   <h2 class="mt-0">{{< marker >}}Coaching individuel{{< /marker >}}</h2>
 
   <div class="grid auto-cols-auto grid-flow-row place-items-center gap-x-12 md:grid-flow-col">
@@ -56,8 +56,8 @@
       >
       <p>Tu en fais partie ? 🙂</p>
       <a
-        class="bg-digijaune-300 hover:bg-digijaune-400 inline-block w-full rounded-full border-2 border-black px-10 py-3 text-center font-semibold no-underline sm:w-fit"
-        href="/services/#coaching-individuel"
+        class="inline-block w-full rounded-full border-2 border-black bg-digijaune-300 px-10 py-3 text-center font-semibold no-underline hover:bg-digijaune-400 md:w-fit"
+        href="{{ `/services/#coaching-individuel` | absLangURL }}"
         >Découvrir les offres</a
       >
     </div>
@@ -76,7 +76,7 @@
   </p>
 </div>
 
-<div class="bg-digibleu-100 relative -mx-6 my-16 p-6">
+<div class="relative -mx-6 my-16 bg-digibleu-100 p-6">
   <h2 class="mt-0">{{< marker >}}Interventions en organisations{{< /marker >}}</h2>
 
   <div class="grid auto-cols-auto grid-flow-row place-items-center gap-x-12 md:grid-flow-col">
@@ -91,8 +91,8 @@
         <strong>être plus efficaces dans un monde de communications numériques</strong>.</p
       >
       <a
-        class="bg-digijaune-300 hover:bg-digijaune-400 inline-block w-full rounded-full border-2 border-black px-10 py-3 text-center font-semibold no-underline sm:w-fit"
-        href="/services/#interventions-en-organisations"
+        class="inline-block w-full rounded-full border-2 border-black bg-digijaune-300 px-10 py-3 text-center font-semibold no-underline hover:bg-digijaune-400 md:w-fit"
+        href="{{ `/services/#interventions-en-organisations` | absLangURL }}"
         >Découvrir les offres</a
       >
     </div>
@@ -170,7 +170,8 @@
   </div>
 </div>
 
-<div class="bg-digibleu-300 relative -mx-6 mt-16 p-6">
+{{< todo >}}
+<div class="relative -mx-6 mt-16 bg-digibleu-300 p-6">
   <h2 class="mt-0">Le Bien-être Numérique se cultive 🌱</h2>
 
   <div class="grid auto-cols-fr grid-flow-row gap-x-16 md:grid-flow-col">
@@ -188,11 +189,76 @@
     <div>
       <h4>Oui, je veux m'abonner à la Newsletter et j'accepte la politique de confidentialité.</h4>
       <div>
-        <form action="https://stats.sender.net/forms/29532/subscribe" method="post">
-          <input type="text" name="email" />
-          <button type="submit">submit</button>
+        <form
+          id="newsletter-form"
+          class="mb-2 flex flex-col gap-4"
+          action="https://stats.sender.net/forms/29532/subscribe"
+          method="post"
+          data-sender-form-id="29532">
+          <input type="email" name="email" required class="p-2 text-lg" />
+          <button
+            type="submit"
+            class="inline-block w-full rounded-full border-2 border-black bg-digijaune-300 px-10 py-3 text-center font-semibold hover:bg-digijaune-400 md:w-fit">
+            S'inscrire à la Newsletter
+          </button>
         </form>
+        <a
+          class="inline-flex items-center text-xs"
+          href="https://www.sender.net/"
+          target="_blank"
+          rel="external nofollow noopener noreferrer">
+          <img class="m-0 mr-2 h-3" alt="Sender.net" src="https://cdn.sender.net/accounts_resources/logo-no-text.svg" />
+          <span>Sender.net email marketing</span>
+        </a>
+        <script>
+          (function (window, document) {
+            const emailRegex =
+              /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+            const senderBaseUrl = 'https://stats.sender.net';
+            const senderForm = document.getElementById('newsletter-form');
+
+            function visitUrl(id) {
+              return senderBaseUrl.concat('/forms/', id, '/visit');
+            }
+
+            function subscribeUrl(id) {
+              return senderBaseUrl.concat('/forms/', id, '/subscribe');
+            }
+
+            if (senderForm) {
+              const formId = senderForm.dataset.senderFormId;
+
+              if (formId) {
+                window.fetch(visitUrl(formId), {
+                  method: 'POST',
+                  headers: new Headers({ 'content-type': 'application/json' }),
+                });
+
+                senderForm.addEventListener('submit', function onSubmit(event) {
+                  event.preventDefault();
+
+                  const email = new FormData(senderForm).get('email');
+                  senderForm.style.backgroundColor = 'red';
+                  window
+                    .fetch(subscribeUrl(formId), {
+                      method: 'POST',
+                      headers: new Headers({ 'content-type': 'application/json' }),
+                      body: JSON.stringify(Object.fromEntries(new FormData(senderForm).entries())),
+                    })
+                    .then(function () {
+                      /** success ! */
+                    })
+                    .catch(function () {
+                      /** failure :( */
+                    });
+                });
+              }
+            }
+          })(window, document);
+        </script>
       </div>
     </div>
   </div>
 </div>
+{{< /todo >}}
