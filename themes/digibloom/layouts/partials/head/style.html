@@ -1,8 +1,6 @@
+{{ $fonts := resources.Get "css/fonts.css" | fingerprint }}
 {{ $style := resources.Get "css/style.css" | fingerprint }}
+
+
+<link rel="stylesheet" href="{{ $fonts.Permalink }}" />
 <link rel="stylesheet" href="{{ $style.Permalink }}" />
-<style>
-  .obf {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-  }
-</style>

@@ -18,19 +18,24 @@
 
     <hr class="mx-auto mt-4 mb-6 max-w-lg border-t-2 border-digibleu-600 sm:mt-6" />
 
+    {{ $current := . }}
+
+
     <nav>
       <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-16">
-        <li class="text-2xl"><a class="underline underline-offset-8" href="{{ `/` | absLangURL }}">Accueil</a></li>
-        <li class="text-2xl"
-          ><a class="underline underline-offset-8" href="{{ `/services/` | absLangURL }}">Services</a></li
-        >
-        <!-- <li class="text-2xl"><a class="underline underline-offset-8" href="#">Blog</a></li> -->
-        <li class="text-2xl"
-          ><a class="underline underline-offset-8" href="{{ `/about/` | absLangURL }}">A propos</a></li
-        >
-        <li class="text-2xl"
-          ><a class="underline underline-offset-8" href="{{ `/contact/` | absLangURL }}">Contact</a></li
-        >
+        {{ range .Site.Menus.main }}
+          {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+          {{ $active = or $active (eq .Page $current) }}
+          {{ $active = or $active (eq .Page.Section $current.Section) }}
+          {{ $extraClass := cond $active "decoration-digibleu-600" "" }}
+          <li class="text-2xl">
+            <a
+              href="{{ .URL | absLangURL }}"
+              class="{{ $extraClass }} underline decoration-2 underline-offset-8 transition-[text-decoration-color] hover:decoration-digibleu-500">
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+        {{ end }}
       </ul>
     </nav>
   </div>

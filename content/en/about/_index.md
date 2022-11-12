@@ -1,8 +1,9 @@
 ---
-linktitle: Home
+title: About
+translationKey: about
 menu:
   main:
-    weight: 1
+    weight: 4
 ---
 
 {{<marker>}}

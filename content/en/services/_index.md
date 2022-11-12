@@ -1,8 +1,8 @@
 ---
-linktitle: Home
+title: Services
 menu:
   main:
-    weight: 1
+    weight: 2
 ---
 
 {{<marker>}}
