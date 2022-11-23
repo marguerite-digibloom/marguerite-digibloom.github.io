@@ -4,9 +4,11 @@
       <div class="flex flex-col items-start gap-2">
         <h3 class="self-center font-semibold md:self-start">Légal</h3>
 
-        <a class="underline" href="#">Mentions légales</a>
-        <a class="underline" href="#">Politique de confidentialité </a>
-        <a class="underline" href="#">Conditions de vente</a>
+        {{ range .Site.Menus.legal }}
+          <a href="{{ .URL | absLangURL }}" class="underline">
+            <span>{{ .Name }}</span>
+          </a>
+        {{ end }}
       </div>
 
       <div class="flex flex-col items-start gap-2">
