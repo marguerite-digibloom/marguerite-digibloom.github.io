@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html {{ with site.LanguageCode | default site.Language.Lang }}lang="{{ . }}"{{ end }}>
+<html {{ with site.LanguageCode | default site.Language.Lang }}lang="{{ . }}"{{ end }} class="h-full">
   {{- partial "head/head.html" . -}}
 
 
-  <body>
-    <div class="flex min-h-screen flex-col">
-      {{- partial "header.html" . -}}
-      {{- block "main" . }}{{- end }}
-      {{- partial "footer.html" . -}}
-    </div>
+  <body class="flex min-h-full flex-col">
+    {{- partial "header.html" . -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "footer.html" . -}}
+    {{- partial "analytics.html" }}
   </body>
 </html>

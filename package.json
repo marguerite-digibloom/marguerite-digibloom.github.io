@@ -1,0 +1,26 @@
+{
+  "name": "digibloom",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run tailwind && npm run hugo",
+    "start": "concurrently \"npm:start:*\"",
+    "start:tailwind": "npm run tailwind:watch",
+    "start:hugo": "wait-on ./themes/digibloom/assets/css/style.css && npm run hugo:watch",
+    "dev": "npm start",
+    "hugo": "hugo --minify",
+    "hugo:watch": "hugo server --bind 0.0.0.0 --baseUrl http://pi.fritz.box:1313/",
+    "tailwind": "tailwindcss -i ./themes/digibloom/assets/css/main.css -o ./themes/digibloom/assets/css/style.css",
+    "tailwind:watch": "npm run tailwind -- --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "0.5.7",
+    "tailwindcss": "3.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "7.5.0",
+    "prettier": "2.7.1",
+    "prettier-plugin-go-template": "0.0.13",
+    "prettier-plugin-tailwindcss": "0.1.13",
+    "wait-on": "6.0.1"
+  }
+}

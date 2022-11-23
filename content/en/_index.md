@@ -1,4 +1,8 @@
 ---
+linktitle: Home
+menu:
+  main:
+    weight: 1
 ---
 
 {{<marker>}}

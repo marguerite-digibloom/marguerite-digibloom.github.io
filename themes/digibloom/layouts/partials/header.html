@@ -1,17 +1,42 @@
-<header class="p-4 pt-0">
-  <div class="flex items-center justify-center">
-    <div class="flex flex-col items-center justify-center">
-      <a class="flex flex-col items-center justify-center" href="{{ .Site.BaseURL | relLangURL }}">
-        {{ $logo := resources.Get "images/logo-background-green.svg" | fingerprint }}
-        <img src="{{ $logo.Permalink }}" class="w-64" alt="{{ .Site.Params.Title }}" />
-        <h1 class="text-4xl font-semibold uppercase">{{ .Site.Params.Title }}</h1>
-      </a>
-      <div
-        class="flex flex-col items-center justify-center divide-y divide-current sm:flex-row sm:divide-x sm:divide-y-0 sm:py-2">
-        {{ range .Site.Params.Headlines }}
-          <h2 class="whitespace-nowrap py-2 text-xl sm:px-2 sm:py-0">{{ . }}</h2>
-        {{ end }}
+<header>
+  <div class="container mx-auto max-w-screen-xl p-6">
+    <div class="flex items-center justify-center">
+      <div class="flex flex-col items-center justify-center">
+        <a href="{{ `/` | absLangURL }}" class="mb-4 flex flex-col items-center justify-center">
+          {{ $logo := resources.Get "images/logo-background-green.svg" | fingerprint }}
+          <img src="{{ $logo.Permalink }}" class="w-48" alt="{{ .Site.Params.Title }}" />
+          <h1 class="text-2xl font-semibold uppercase tracking-[.2em]">{{ .Site.Params.Title }}</h1>
+        </a>
+        <div
+          class="flex flex-col items-center justify-center divide-y divide-current sm:flex-row sm:divide-x sm:divide-y-0">
+          {{ range .Site.Params.Headlines }}
+            <h2 class="whitespace-nowrap py-2 text-lg sm:px-2 sm:py-0">{{ . }}</h2>
+          {{ end }}
+        </div>
       </div>
     </div>
+
+    <hr class="mx-auto mt-4 mb-6 max-w-lg border-t-2 border-digibleu-600 sm:mt-6" />
+
+    {{ $current := . }}
+
+
+    <nav>
+      <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-16">
+        {{ range .Site.Menus.main }}
+          {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+          {{ $active = or $active (eq .Page $current) }}
+          {{ $active = or $active (eq .Page.Section $current.Section) }}
+          {{ $extraClass := cond $active "decoration-digibleu-600" "" }}
+          <li class="text-2xl">
+            <a
+              href="{{ .URL | absLangURL }}"
+              class="{{ $extraClass }} underline decoration-2 underline-offset-8 transition-[text-decoration-color] hover:decoration-digibleu-500">
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
   </div>
 </header>
