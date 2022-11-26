@@ -2,5 +2,8 @@
 {{ $style := resources.Get "css/style.css" | fingerprint }}
 
 
+<link rel="preload" href="/fonts/montserrat/montserrat-latin-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/montserrat/montserrat-latin-italic.woff2" as="font" type="font/woff2" crossorigin />
+
 <link rel="stylesheet" href="{{ $fonts.Permalink }}" />
 <link rel="stylesheet" href="{{ $style.Permalink }}" />
