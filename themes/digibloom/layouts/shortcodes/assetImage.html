@@ -1,0 +1,9 @@
+{{ $image := (resources.Get (.Get "src")) | fingerprint }}
+
+
+<img
+  {{ with .Get "class" }}class="{{ . }}"{{ end }}
+  src="{{ $image.RelPermalink }}"
+  width="{{ $image.Width }}"
+  height="{{ $image.Height }}"
+  {{ with .Get "alt" }}alt="{{ . }}"{{ end }} />

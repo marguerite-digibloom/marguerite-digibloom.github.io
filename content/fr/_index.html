@@ -17,7 +17,7 @@ menu:
   <p class="text-center">Je te présente Ollie. …Te reconnais-tu dans son histoire ?</p>
 
   <div class="container mx-auto sm:max-w-[70%]">
-    <video controls controlslist="nodownload" preload="metadata" width="1920">
+    <video controls controlslist="nodownload" preload="metadata" width="1920" height="1080">
       <source src="/videos/introduction-digibloom.mp4" type="video/mp4" />
     </video>
   </div>
@@ -41,10 +41,11 @@ menu:
       >
     </div>
     <figure class="row-start-1 m-0 flex flex-col items-center justify-start">
-      <img
+      {{< assetImage
         class="max-w-[200px]"
         src="/images/marguerite/dot.png"
-        alt="Portrait de Marguerite Pometko, fondatrice de Digibloom" />
+        alt="Portrait de Marguerite Pometko, fondatrice de Digibloom"
+      >}}
       <figcaption class="text-center text-sm md:max-w-[200px]">Marguerite, fondatrice de Digibloom</figcaption>
     </figure>
   </div>
@@ -55,10 +56,11 @@ menu:
 
   <div class="grid auto-cols-auto grid-flow-row place-items-center gap-x-12 md:grid-flow-col">
     <figure class="m-0">
-      <img
+      {{< assetImage
         class="max-w-[200px]"
         src="/images/flaticon/talking.png"
-        alt="Deux personnes échangent lors d'un coaching en bien-être numérique" />
+        alt="Deux personnes échangent lors d'un coaching en bien-être numérique"
+      >}}
     </figure>
     <div>
       <strong>Pour qui ?</strong>
@@ -96,10 +98,11 @@ menu:
 
   <div class="grid auto-cols-auto grid-flow-row place-items-center gap-x-12 md:grid-flow-col">
     <figure class="m-0">
-      <img
+      {{< assetImage
         class="max-w-[200px]"
         src="/images/flaticon/council.png"
-        alt="3 collègues réunis autour d'une table pour un atelier sur le bien-être numérique" />
+        alt="3 collègues réunis autour d'une table pour un atelier sur le bien-être numérique"
+      >}}
     </figure>
     <div>
       <strong>Pour qui ?</strong>
@@ -120,7 +123,7 @@ menu:
 <div class="my-16">
   <div class="grid auto-cols-fr grid-flow-row gap-16 md:grid-flow-col">
     <div
-      ><strong class="text-center text-4xl md:text-left">50%</strong
+      ><strong class="block text-center text-4xl md:text-left">50%</strong
       ><p class="mb-0"
         >Le pourcentage de personnes qui seront myopes d'ici 2050, en raison d'une augmentation du temps passé en
         intérieur (<a
@@ -133,7 +136,7 @@ menu:
       ></div
     >
     <div
-      ><strong class="text-center text-4xl md:text-left">23 min 15 sec</strong
+      ><strong class="block text-center text-4xl md:text-left">23 min 15 sec</strong
       ><p class="mb-0"
         >Le temps moyen qu'il faut pour revenir à une tâche après avoir été interrompu.e (<a
           href="https://www.researchgate.net/publication/221518077_The_cost_of_interrupted_work_More_speed_and_stress"
@@ -145,7 +148,7 @@ menu:
       ></div
     >
     <div
-      ><strong class="text-center text-4xl md:text-left">39%</strong
+      ><strong class="block text-center text-4xl md:text-left">39%</strong
       ><p class="mb-0"
         >Des employé.e.s envisagent de quitter leur poste si leur employeur ne leur offre pas la possibilité de
         télétravailler (Harvard Business Review).</p
@@ -160,10 +163,11 @@ menu:
   <div class="grid auto-cols-fr grid-flow-row gap-x-12 gap-y-8 md:grid-flow-col">
     <div class="flex flex-col items-center">
       <figure class="m-0">
-        <img
+        {{< assetImage
           class="max-w-[150px]"
           src="/images/flaticon/computer.png"
-          alt="Une personne assise en position zen avec son ordinateur" />
+          alt="Une personne assise en position zen avec son ordinateur"
+        >}}
       </figure>
       <h3 class="text-center uppercase">Mieux vivre</h3>
       <p calss="mb-0">Améliorer ses habitudes numériques pour améliorer sa qualité de vie et son bien-être.</p>
@@ -171,10 +175,11 @@ menu:
 
     <div class="flex flex-col items-center">
       <figure class="m-0">
-        <img
+        {{< assetImage
           class="max-w-[150px]"
           src="/images/flaticon/association.png"
-          alt="Personnes qui se serrent la main autour d'un puzzle en forme de cœur" />
+          alt="Personnes qui se serrent la main autour d'un puzzle en forme de cœur"
+        >}}
       </figure>
       <h3 class="text-center uppercase">Lien social</h3>
       <p calss="mb-0">
@@ -184,10 +189,11 @@ menu:
 
     <div class="flex flex-col items-center">
       <figure class="m-0">
-        <img
+        {{< assetImage
           class="max-w-[150px]"
           src="/images/flaticon/renewable-energy.png"
-          alt="Flèches qui tournent de façon circulaire autour d'un éclair" />
+          alt="Flèches qui tournent de façon circulaire autour d'un éclair"
+        >}}
       </figure>
       <h3 class="text-center uppercase">Durabilité</h3>
       <p calss="mb-0"
