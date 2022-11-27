@@ -1,4 +1,6 @@
 ---
+private: true
+
 linktitle: Home
 menu:
   main:

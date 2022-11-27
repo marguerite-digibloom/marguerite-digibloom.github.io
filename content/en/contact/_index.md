@@ -1,4 +1,6 @@
 ---
+private: true
+
 title: Contact
 menu:
   main:
