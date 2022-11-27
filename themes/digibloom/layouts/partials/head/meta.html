@@ -4,7 +4,7 @@
 
 {{ hugo.Generator }}
 
-{{ $public := and (not .Site.Params.private) (not .Params.private) }}
+{{ $public := and (not .Site.Params.Private) (not .Params.Private) }}
 {{ if $public }}
   <meta name="robots" content="index, follow" />
 {{ else }}

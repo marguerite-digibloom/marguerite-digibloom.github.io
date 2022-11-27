@@ -1,4 +1,6 @@
 ---
+private: true
+
 title: About
 translationKey: about
 menu:

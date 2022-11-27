@@ -1,4 +1,6 @@
 ---
+private: true
+
 linktitle: Home
 menu:
   main:
@@ -12,3 +14,5 @@ Coming soon
 </h2>
 
 {{</marker>}}
+
+[Test]({{< relref `/services/#coaching-individuel` >}} "Test")
