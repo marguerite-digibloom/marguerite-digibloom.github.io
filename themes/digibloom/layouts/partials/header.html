@@ -2,7 +2,7 @@
   <div class="container mx-auto max-w-screen-xl p-6">
     <div class="flex items-center justify-center">
       <div class="flex flex-col items-center justify-center">
-        <a href="{{ `/` | absLangURL }}" class="mb-4 flex flex-col items-center justify-center">
+        <a href="{{ relref . `/` }}" class="mb-4 flex flex-col items-center justify-center">
           {{ $logo := resources.Get .Site.Params.LogoAssetPath | fingerprint }}
           <img src="{{ $logo.Permalink }}" class="h-48" alt="{{ .Site.Params.Title }}" />
           <h1 class="text-2xl font-semibold uppercase tracking-[.2em]">{{ .Site.Params.Title }}</h1>
@@ -30,7 +30,7 @@
           {{ $extraClass := cond $active "decoration-digibleu-600" "" }}
           <li class="text-2xl">
             <a
-              href="{{ .URL | absLangURL }}"
+              href="{{ .URL }}"
               class="{{ $extraClass }} underline decoration-2 underline-offset-8 transition-[text-decoration-color] hover:decoration-digibleu-500">
               <span>{{ .Name }}</span>
             </a>
