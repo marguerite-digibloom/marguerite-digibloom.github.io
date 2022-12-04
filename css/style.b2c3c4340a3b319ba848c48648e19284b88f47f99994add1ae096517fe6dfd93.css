@@ -1539,6 +1539,14 @@ video {
   transition-duration: 150ms;
 }
 
+.marker\:hidden *::marker {
+  display: none;
+}
+
+.marker\:hidden::marker {
+  display: none;
+}
+
 .hover\:bg-digijaune-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 234 149 / var(--tw-bg-opacity));
@@ -1651,4 +1659,8 @@ video {
   .md\:text-left {
     text-align: left;
   }
+}
+
+.\[\&\:\:-webkit-details-marker\]\:hidden::-webkit-details-marker {
+  display: none;
 }
