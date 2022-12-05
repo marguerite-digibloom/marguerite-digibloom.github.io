@@ -38,10 +38,10 @@ module.exports = {
         DEFAULT: {
           css: {
             p: {
-              textAlign: 'justify',
+              // textAlign: 'justify',
             },
             li: {
-              textAlign: 'justify',
+              // textAlign: 'justify',
             },
             figcaption: {
               textAlign: 'center',
