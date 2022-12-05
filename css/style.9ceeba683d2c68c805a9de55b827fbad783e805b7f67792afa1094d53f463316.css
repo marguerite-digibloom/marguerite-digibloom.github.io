@@ -908,7 +908,6 @@ video {
 .prose :where(p):not(:where([class~="not-prose"] *)) {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
-  text-align: justify;
 }
 
 .prose :where(video):not(:where([class~="not-prose"] *)) {
@@ -924,7 +923,6 @@ video {
 .prose :where(li):not(:where([class~="not-prose"] *)) {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  text-align: justify;
 }
 
 .prose :where(ol > li):not(:where([class~="not-prose"] *)) {
@@ -1078,6 +1076,10 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mb-6 {
