@@ -1,0 +1,20 @@
+footer:
+  legal:
+    label: 'Legal'
+  credits:
+    label: 'Credits'
+    made_by:
+      label: 'Website made by'
+    illustrations_by:
+      label: 'Illustrations by'
+    photos_by:
+      label: 'Portrait photos by'
+    icons:
+      by:
+        label: 'Icons by'
+      'on':
+        label: 'on'
+  contact:
+    label: 'Contact'
+    calendly:
+      label: 'Book a call on Calendly'

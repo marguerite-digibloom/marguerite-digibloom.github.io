@@ -1,0 +1,20 @@
+footer:
+  legal:
+    label: 'Légal'
+  credits:
+    label: 'Crédits'
+    made_by:
+      label: 'Site réalisé par'
+    illustrations_by:
+      label: 'Illustrations par'
+    photos_by:
+      label: 'Photos portrait par'
+    icons:
+      by:
+        label: 'Icônes par'
+      'on':
+        label: 'sur'
+  contact:
+    label: 'Contact'
+    calendly:
+      label: 'Prendre RDV sur Calendly'

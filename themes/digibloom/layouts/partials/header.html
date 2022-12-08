@@ -1,5 +1,5 @@
 <header>
-  <div class="container mx-auto max-w-screen-xl p-6">
+  <div class="container relative mx-auto max-w-screen-xl p-6">
     <div class="flex items-center justify-center">
       <div class="flex flex-col items-center justify-center">
         <a href="{{ relref . `/` }}" class="mb-4 flex flex-col items-center justify-center">
@@ -38,5 +38,26 @@
         {{ end }}
       </ul>
     </nav>
+
+    {{ if (and .Site.IsMultiLingual .IsTranslated) }}
+      <nav class="absolute top-0 right-0 p-[inherit]">
+        <ul class="text-xl uppercase">
+          {{ $privateTranslations := where .Translations "Params.Private" true }}
+          {{ $translations := .Translations | symdiff $privateTranslations }}
+
+          {{ if gt (len $translations) 0 }}
+            {{ range .AllTranslations }}
+              {{ if not (in $privateTranslations .) }}
+                {{ $extraClass := cond (eq .Language $.Site.Language) "text-digibleu-600" "" }}
+                <li class="{{ $extraClass }}"
+                  ><a href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">{{ .Language.Lang }}</a></li
+                >
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+
   </div>
 </header>

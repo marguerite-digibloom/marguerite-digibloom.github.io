@@ -2,7 +2,7 @@
   <div class="container mx-auto max-w-screen-xl px-7 py-8">
     <div class="grid auto-cols-auto grid-flow-row justify-evenly gap-x-16 gap-y-8 md:grid-flow-col">
       <div class="flex flex-col items-start gap-2">
-        <h3 class="self-center font-semibold md:self-start">Légal</h3>
+        <h3 class="self-center font-semibold md:self-start">{{ i18n "footer.legal.label" }}</h3>
 
         {{ range .Site.Menus.legal }}
           <a href="{{ .URL }}" class="underline">
@@ -12,10 +12,10 @@
       </div>
 
       <div class="flex flex-col items-start gap-2">
-        <h3 class="self-center font-semibold md:self-start">Crédits</h3>
+        <h3 class="self-center font-semibold md:self-start">{{ i18n "footer.credits.label" }}</h3>
 
         <span>
-          Site réalisé par
+          {{ i18n "footer.credits.made_by.label" }}
           <a
             href="https://github.com/known-as-bmf"
             class="underline"
@@ -25,7 +25,7 @@
           >
         </span>
         <span>
-          Illustrations par
+          {{ i18n "footer.credits.illustrations_by.label" }}
           <a
             href="https://manonboschard.com"
             class="underline"
@@ -35,7 +35,7 @@
           </a>
         </span>
         <span>
-          Photos portrait par
+          {{ i18n "footer.credits.photos_by.label" }}
           <a
             href="https://www.juliemeresse.com"
             class="underline"
@@ -45,7 +45,7 @@
           </a>
         </span>
         <span>
-          Icônes par
+          {{ i18n "footer.credits.icons.by.label" }}
           <a
             href="https://www.freepik.com"
             class="underline"
@@ -54,7 +54,7 @@
             rel="external nofollow noopener noreferrer"
             >Freepik</a
           >
-          sur
+          {{ i18n "footer.credits.icons.on.label" }}
           <a
             href="https://www.flaticon.com"
             class="underline"
@@ -67,7 +67,7 @@
       </div>
 
       <div class="flex flex-col items-start gap-2">
-        <h3 class="self-center font-semibold md:self-start">Contact</h3>
+        <h3 class="self-center font-semibold md:self-start">{{ i18n "footer.contact.label" }}</h3>
 
         <a
           href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%6d%61%72%67%75%65%72%69%74%65&#64;%64%69%67%69%62%6c%6f%6f%6d&#46;%6e%65%74"
@@ -81,7 +81,7 @@
           class="underline"
           target="_blank"
           rel="external nofollow noopener noreferrer">
-          Prendre RDV sur Calendly
+          {{ i18n "footer.contact.calendly.label" }}
         </a>
         <div class="flex items-center gap-2">
           {{ $instagram := resources.Get "/images/other/instagram-black.png" | fingerprint }}
