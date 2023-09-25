@@ -16,7 +16,7 @@
       </div>
     </div>
 
-    <hr class="mx-auto mt-4 mb-6 max-w-lg border-t-2 border-digibleu-600 sm:mt-6" />
+    <hr class="mx-auto mb-6 mt-4 max-w-lg border-t-2 border-digibleu-600 sm:mt-6" />
 
     {{ $current := . }}
 
@@ -25,13 +25,13 @@
       <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-16">
         {{ range .Site.Menus.main }}
           {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
-          {{ $active = or $active (eq .Page $current) }}
-          {{ $active = or $active (eq .Page.Section $current.Section) }}
+          {{ $active = or $active (and (ne .Page nil) (or (eq .Page $current) (eq .Page.Section $current.Section))) }}
           {{ $extraClass := cond $active "decoration-digibleu-600" "" }}
           <li class="text-2xl">
             <a
               href="{{ .URL }}"
-              class="{{ $extraClass }} underline decoration-2 underline-offset-8 transition-[text-decoration-color] hover:decoration-digibleu-500">
+              class="{{ $extraClass }} underline decoration-2 underline-offset-8 transition-[text-decoration-color] hover:decoration-digibleu-500"
+              {{ with .Params.External }}target="_blank" rel="external nofollow noopener noreferrer"{{ end }}>
               <span>{{ .Name }}</span>
             </a>
           </li>
@@ -40,7 +40,7 @@
     </nav>
 
     {{ if (and .Site.IsMultiLingual .IsTranslated) }}
-      <nav class="absolute top-0 right-0 p-[inherit]">
+      <nav class="absolute right-0 top-0 p-[inherit]">
         <ul class="text-xl uppercase">
           {{ $privateTranslations := where .Translations "Params.Private" true }}
           {{ $translations := .Translations | symdiff $privateTranslations }}
