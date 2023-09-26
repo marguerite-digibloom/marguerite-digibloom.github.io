@@ -5,11 +5,11 @@ main:
   - name: About
     pageRef: /about
     weight: 20
-  - name: Newsletter
-    url: https://newsletter.digibloom.net
-    weight: 30
-    params:
-      external: true
   - name: Contact
     pageRef: /contact
+    weight: 30
+  - name: Newsletter
+    url: https://newsletter.digibloom.net
     weight: 40
+    params:
+      external: true
