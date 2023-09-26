@@ -1,0 +1,15 @@
+main:
+  - name: Accueil
+    pageRef: /
+    weight: 10
+  - name: À propos
+    pageRef: /a-propos
+    weight: 20
+  - name: Contact
+    pageRef: /contact
+    weight: 30
+  - name: Newsletter
+    url: https://newsletter.digibloom.net
+    weight: 40
+    params:
+      external: true
