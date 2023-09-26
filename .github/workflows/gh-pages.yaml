@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  release:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,20 +26,14 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: |
-            package-lock.json
-            themes/digibloom/package-lock.json
+          cache-dependency-path: package-lock.json
 
-      - name: Build theme
-        working-directory: themes/digibloom
+      - name: Build site
         run: |
           npm ci
           npm run build
 
-      - name: Build site
-        run: hugo --minify
-
-      - name: Deploy
+      - name: Update gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
         with:
