@@ -1,0 +1,27 @@
+{
+  "name": "Digibloom",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node",
+  // configuration to support podman
+  // see https://code.visualstudio.com/remote/advancedcontainers/docker-options#_podman
+  "runArgs": ["--userns=keep-id"],
+  // "node" is the name of the user from base image
+  // https://github.com/devcontainers/images/tree/main/src/javascript-node
+  "containerEnv": {
+    "HOME": "/home/node"
+  },
+  // Hugo will run the dev server on this port
+  "forwardPorts": [1313],
+  "features": {
+    // https://github.com/devcontainers/features/tree/main/src/hugo
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "extended": true
+    }
+  },
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "eamodio.gitlens", "bradlc.vscode-tailwindcss"]
+    }
+  }
+}
