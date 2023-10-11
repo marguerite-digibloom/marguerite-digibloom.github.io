@@ -8,7 +8,7 @@
     "start:hugo": "wait-on ./themes/digibloom/assets/css/style.css && npm run hugo:watch",
     "dev": "npm start",
     "hugo": "hugo --minify",
-    "hugo:watch": "hugo server --bind 0.0.0.0 --baseUrl http://pi.fritz.box:1313/",
+    "hugo:watch": "hugo server --bind 0.0.0.0 --baseURL http://localhost:1313/",
     "tailwind": "tailwindcss -i ./themes/digibloom/tailwind/main.css -o ./themes/digibloom/assets/css/style.css",
     "tailwind:watch": "npm run tailwind -- --watch"
   },
